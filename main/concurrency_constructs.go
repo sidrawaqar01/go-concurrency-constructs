@@ -19,6 +19,10 @@ import (
 9. gomaxprolever
 */
 
+/**********************************************************************
+                           go routine
+**********************************************************************/
+
 func goRoutineDefinitions() {
 
 	// way 1
@@ -40,6 +44,10 @@ func goRoutineDefinitions() {
 func sampleFuncForGoRoutine() {
 	fmt.Println("this is go routine 1")
 }
+
+/**********************************************************************
+                              wait group
+**********************************************************************/
 
 func waitGroupSimpleExample() {
 
@@ -97,6 +105,10 @@ func waitGroupLoopWithCorrectlyUserVariable() {
 	salutationWaitgroupLoop.Wait()
 }
 
+/**********************************************************************
+                                mutex
+**********************************************************************/
+
 func mutex() {
 
 	var countProtectedByMutex int
@@ -128,6 +140,10 @@ func mutex() {
 
 	waitGroupForMutex.Wait()
 }
+
+/**********************************************************************
+                               rwmutex
+**********************************************************************/
 
 func rwmutex() {
 	var countProtectedByRWMutex int
@@ -167,6 +183,10 @@ func rwmutex() {
 	}
 	waitGroupForMutexRW.Wait()
 }
+
+/**********************************************************************
+                                cond
+**********************************************************************/
 
 func waitingForGoRoutineToFinish() {
 	dummyCondition := false
@@ -212,7 +232,6 @@ func conditionWithSignal() {
 	cond.L.Unlock()
 }
 
-// skip this for now
 func conditionWithBroadcast() {
 
 	c := sync.NewCond(&sync.Mutex{})
@@ -239,6 +258,10 @@ func conditionWithBroadcast() {
 	}
 }
 
+/**********************************************************************
+                                once
+**********************************************************************/
+
 func once() {
 	once := sync.Once{}
 	count := 0
@@ -258,6 +281,10 @@ func once() {
 	fmt.Printf("count is %d\n", count)
 }
 
+/**********************************************************************
+                                pool
+**********************************************************************/
+
 func pool() {
 
 	pool := sync.Pool{
@@ -272,6 +299,10 @@ func pool() {
 	pool.Put(instance)     // will put the instance back to the pool
 	pool.Get()             // will return the instance that was put back, hence not initializing a new one
 }
+
+/**********************************************************************
+                              channels
+**********************************************************************/
 
 func unbufferedChannelsTwoWay() {
 
@@ -412,6 +443,10 @@ func selectStatement() {
 		}
 	}
 }
+
+/**********************************************************************
+                              GOMAXPROCS
+**********************************************************************/
 
 func setRuntimeGOMAXPROCS() {
 	runtime.GOMAXPROCS(runtime.NumCPU())

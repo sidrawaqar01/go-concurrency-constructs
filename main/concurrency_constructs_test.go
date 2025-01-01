@@ -6,9 +6,17 @@ import (
 	"testing"
 )
 
+/**********************************************************************
+                           go routine
+**********************************************************************/
+
 func TestGoRoutineDefinitions(t *testing.T) {
 	goRoutineDefinitions()
 }
+
+/**********************************************************************
+                           wait group
+**********************************************************************/
 
 func TestWaitGroupSimpleExample(t *testing.T) {
 	waitGroupSimpleExample()
@@ -26,13 +34,25 @@ func TestWaitGroupLoopWithCorrectlyUserVariable(t *testing.T) {
 	waitGroupLoopWithCorrectlyUserVariable()
 }
 
+/**********************************************************************
+                                mutex
+**********************************************************************/
+
 func TestMutex(t *testing.T) {
 	mutex()
 }
 
+/**********************************************************************
+                               rwmutex
+**********************************************************************/
+
 func TestRwMutex(t *testing.T) {
 	rwmutex()
 }
+
+/**********************************************************************
+                                cond
+**********************************************************************/
 
 func TestWaitingForGoRoutineToFinish(t *testing.T) {
 	waitingForGoRoutineToFinish()
@@ -46,13 +66,25 @@ func TestCondWithMultipleGoRoutines(t *testing.T) {
 	conditionWithBroadcast()
 }
 
+/**********************************************************************
+                                once
+**********************************************************************/
+
 func TestOnce(t *testing.T) {
 	once()
 }
 
+/**********************************************************************
+                                pool
+**********************************************************************/
+
 func TestPool(t *testing.T) {
 	pool()
 }
+
+/**********************************************************************
+                              channels
+**********************************************************************/
 
 func TestUnbufferedChannelsTwoWay(t *testing.T) {
 	unbufferedChannelsTwoWay()
@@ -81,6 +113,10 @@ func TestRangeOverChannel2(t *testing.T) {
 func TestSelectStatement(t *testing.T) {
 	selectStatement()
 }
+
+/**********************************************************************
+                              GOMAXPROCS
+**********************************************************************/
 
 func TestSetRuntimeGOMAXPROCS(t *testing.T) {
 	setRuntimeGOMAXPROCS()
